@@ -1,0 +1,338 @@
+@import "clearfix";
+@import "params";
+
+body.darklyStyle{
+	background:$BlockGun;
+	color:#fff;
+	a{
+		color:#fff;
+	}
+}
+body.lightStyle{
+	background: #fff;
+	color:$BlockGun;
+	background: url(../imgs/bg.png) repeat;
+}
+
+.externalLinks,
+.internalLinks,
+.backlLink{
+	position:absolute;
+	left:90px;
+	word-spacing: 20px;
+	letter-spacing: 5px;
+}
+.nowHere{
+	position:absolute;
+	right:90px;
+	top:70px;
+	word-spacing: 20px;
+	letter-spacing: 5px;	
+}
+.backlLink:after {
+	position:absolute;
+	left:0;
+	bottom:-300px;
+	content:"";
+	height:240px;
+	width:2px;
+	background: $BlockGun;
+}
+.externalLinks,
+.backlLink{
+	top:70px;
+}
+.internalLinks{
+	bottom:70px;
+}
+.rightNav {
+	position: absolute;
+	width:12px;
+	right:90px;
+	bottom:120px;
+	.buttons{
+		margin:20px 0;
+		cursor:default;
+		&:hover .button2{
+			background:Red;
+			transform:perspective(800px) rotateY(0);
+		}
+	}
+	.button{
+		width:50px;
+		height:70px;
+		border:1px solid #fff;
+		margin-left:-60px;
+		font-size:32px;
+		padding:13px;
+		box-sizing: border-box;
+	}
+	.button2{
+		background:$BlockGun ;
+	}
+	.button1{
+		margin-bottom:-70px;
+		background: #fff;
+		color:$BlockGun;
+	}
+	li{
+		display:block;
+		width:12px;
+		height:12px;
+		margin:40px 0;
+		a{
+			height:100%;
+			width:100%;
+		}
+	}
+	span.r{
+		border:1px solid #fff;
+		width:10px;
+		height:10px;
+		position:absolute;
+	}
+}
+
+.bg-art{
+	position:absolute;
+	top:0;
+	left:0;
+	img {
+		height:100%;
+	}
+}
+.container{
+	position:relative;
+	width:$ContainerWid;
+	margin:0 auto;
+}
+.left-container {
+	display: inline-block;
+	width: $LeftContainerWid;
+	margin-right:-4px;
+	vertical-align: middle;
+	h1 {
+		font-size:72px;
+		letter-spacing: 15px;
+		line-height:1.5;
+	}
+}
+.right-container {
+	position:relative;
+	width:$RightContainerWid;
+	display: inline-block;
+	vertical-align: middle;
+	$LeftContainerWidth : 324px;
+	.blocks,
+	.buttons{
+		margin: 0 auto;
+		width:$LeftContainerWidth;
+	}
+	.buttons{
+		margin-top:20px;
+	}
+	.block{
+		width:100%;
+		height:200px;
+		border:1px solid #fff;
+		margin:10px 0;
+	}
+	$LeftConBtnHeight:42px;
+	.button{
+		width:($LeftContainerWidth - 3)/2;
+		height:$LeftConBtnHeight;
+		border:1px solid #fff;
+		display: inline-block;
+	}
+	.button:first-child{
+		margin-right: -3px;
+	}	
+	.button:last-child{
+		margin-left: -3px;
+	}
+	.button:after{
+		content:"";
+		position:absolute;
+		width:($LeftContainerWidth - 3)/2*0.6;
+		margin-left:($LeftContainerWidth - 3)/2*0.2;
+		margin-top:$LeftConBtnHeight/2;
+		height:1px;
+		background: #fff;
+	}
+}
+
+#part-video {
+	position:relative;
+	margin: 0 auto;
+	width:80%;
+	.video {
+		position:relative;
+		width:40%;
+		display: inline-block;
+		height:330px;
+		background: #000;
+	}
+	.video:last-child{
+		float:right;
+	}
+}
+
+#aboutUs{
+	text-align: center;
+	h1.intro{
+		margin-top:150px;
+		margin-bottom: 30px;
+		font-size: 36px;
+	}
+	.bolckTitle{
+		width:300px;
+		background: $BlockGun;
+		letter-spacing: 10px;
+		color:#fff;
+		margin:0 auto;
+		font-size: 20px;
+		padding:17px 0;
+		margin-top:70px;
+	}
+}
+#picWall{
+	position: relative;
+	width:80%;
+	margin:80px auto;
+	.item{
+		width:200px;
+		height:200px;
+		background: #D8D8D8;
+		display: inline-block;
+		overflow: hidden;
+		margin:20px;
+		img{width:100%;}
+	}
+
+}
+
+.rightNav-mem{
+	position: absolute;
+	right:90px;
+	top:150px;
+	.switchbox{
+		font-size: 16px;
+		height: 95px;
+		.items{
+			display: inline-block;
+		}
+		.item{
+			width:30px;
+			height:100%;
+			border:1px solid $BlockGun;
+			display: inline-block;
+			margin-left: -7px;
+			padding:13px 5px;
+			box-sizing: border-box;
+		}
+		.now{
+			height: 91px;
+		}
+	}
+	ul{
+		float:right;
+	}
+	li{
+		display:block;
+		width:12px;
+		height:12px;
+		margin:40px 0;
+	}
+	span.r{
+		border:1px solid $BlockGun;
+		width:10px;
+		height:10px;
+		position:absolute;
+	}	
+}
+
+#memCard{
+	width:512px;
+	height:360px;
+	border:1px solid $BlockGun;
+	margin: 0 auto;
+	margin-top:-512px;
+	position: relative;
+	.phto{
+		position:absolute;
+		width:120px;
+		height:120px;
+		border:1px solid $BlockGun;
+		background:$BlockGun ;
+		left:196px;
+		top:-60px;
+		border-radius: 50%;
+		overflow: hidden;
+		img{
+			width:100%;
+			height:100%;
+		}
+	}
+	.name{
+		text-align: center;
+		margin-top: 80px;
+		letter-spacing: 15px;
+		padding-left:15px;
+		font-weight: bold;
+	}
+	.content{
+		border-top:1px solid $BlockGun;
+		width:90%;
+		height:200px;
+		margin:0 auto;
+		overflow: hidden;
+		margin-top: 30px;
+		padding-top:10px;
+	}
+	.part1,
+	.part2{
+		margin:15px 0;
+		line-height: 2;
+		letter-spacing: 1;
+		span{
+			font-size: 1.3em;
+			font-style:italic;
+			padding-right: 10px;
+			color:#666;
+		}
+	}
+	.links{
+		position:absolute;
+		right: 30px;
+		bottom: 15px;
+		height:30px;
+		width:100px;
+		a{
+			width:35px;
+			height:30px;
+			display: inline-block;
+			margin:0 5px;
+			span{
+				display: block;
+				height:100%;
+			}
+		}
+	}
+}
+
+#screenVedio{
+	min-width:100%;
+	min-height:100%;
+	width:auto;
+	height:auto;
+}
+
+
+
+
+span.github{
+	background: url('../imgs/github.png') no-repeat 100% 100%;
+}
+span.blog{
+	background: url('../imgs/blog.png') no-repeat;
+}

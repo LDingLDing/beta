@@ -1,0 +1,10 @@
+
+ /** color **/
+$BlockGun : #2D2D2D ;
+
+
+/** length **/
+
+$ContainerWid : 1200px;
+$LeftContainerWid:510px;
+$RightContainerWid : $ContainerWid  - $LeftContainerWid - 4px ;

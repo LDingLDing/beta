@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>β-house</title>
+	<link rel="stylesheet" href="../dist/css/jquery.fullPage.css">
+	<link rel="stylesheet" href="../dist/css/app.css">
+
+	<script src="../dist/js/jquery-1.8.3.min.js"></script>
+	<script src="../dist/js/jquery.fullPage.js"></script>
+
+</head>
+<body class="darklyStyle">
+<div id="dowebok">
+	<div class="section">
+		<video id="screenVedio" muted="" loop="" autoplay="">
+	  		<source src="../links/video.mp4"></source>
+		</video>
+	</div>	
+	<div class="section">
+		<div class="bg-art">
+			<img src="../dist/imgs/artfor1.png">
+		</div>
+		<nav class="externalLinks">
+			<a href="http://xingzhi.betahouse.us/" target="_BLANK">行之</a>
+			<a href="#">招新</a>
+		</nav>
+		<nav class="internalLinks">
+			<a href="about.html">ABOUT</a>
+			<a href="#">EMAIL</a>
+		</nav>		
+		<div class="rightNav">
+			<div class="buttons">
+				<div class="button button1" onClick="$.fn.fullpage.moveSectionUp()">P</div>
+				<div class="button button2" onClick="$.fn.fullpage.moveSectionUp()">P</div>
+			</div>
+			<div class="buttons">
+				<div class="button button1" onClick="$.fn.fullpage.moveSectionDown()">N</div>
+				<div class="button button2" onClick="$.fn.fullpage.moveSectionDown()">N</div>
+			</div>
+			<ul>
+				<li data-menuanchor="page1"><a href="#page1"><span class="r"></span></a></li>
+				<li data-menuanchor="page2"><a href="#page2"><span class="r"></span></a></li>
+				<li data-menuanchor="page3"><a href="#page3"><span class="r"></span></a></li>
+				<li data-menuanchor="page4"><a href="#page4"><span class="r"></span></a></li>
+			</ul>
+		</div>
+		<div class="container">
+			<div class="left-container">
+				<h1> WE CREAT <br/> THINGS</h1>
+			</div>
+			<div class="right-container">
+				<div class="blocks blocks-1">
+					<div class="block"></div>
+					<div class="block"></div>
+					<div class="block"></div>
+				</div>
+				<div class="buttons">
+					<div class="button"></div>
+					<div class="button"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="bg-art">
+			<img src="../dist/imgs/artfor2.png">
+		</div>
+		<div  id="part-video">
+			<div class="video"></div>
+			<div class="video"></div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+<script>
+	$(function(){
+		$('#dowebok').fullpage({
+			resize:false,
+			anchors:['page1','page2','page3','page4']
+		});
+	});
+
+</script>
+</html>
