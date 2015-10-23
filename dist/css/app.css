@@ -64,13 +64,31 @@ body.lightStyle {
   color: #2D2D2D;
   background: url(../imgs/bg.png) repeat; }
 
+.a-dec {
+  position: relative;
+  display: inline-block;
+  padding: 3px 5px;
+  margin-left: -4px; }
+
+.a-dec:hover {
+  border-bottom: 1px solid; }
+
+.a-dec:first-child {
+  margin-left: 0; }
+
 .externalLinks,
 .internalLinks,
 .backlLink {
+  z-index: 222;
   position: absolute;
   left: 90px;
   word-spacing: 20px;
   letter-spacing: 5px; }
+  .externalLinks a:hover,
+  .internalLinks a:hover,
+  .backlLink a:hover {
+    text-decoration: none;
+    cursor: default; }
 
 .nowHere {
   position: absolute;
@@ -96,30 +114,44 @@ body.lightStyle {
   bottom: 70px; }
 
 .rightNav {
+  z-index: 222;
   position: absolute;
   width: 12px;
   right: 90px;
   bottom: 120px; }
   .rightNav .buttons {
+    position: relative;
     margin: 20px 0;
-    cursor: default; }
-    .rightNav .buttons:hover .button2 {
-      background: Red;
-      transform: perspective(800px) rotateY(0); }
-  .rightNav .button {
     width: 50px;
     height: 70px;
-    border: 1px solid #fff;
+    cursor: default;
     margin-left: -60px;
-    font-size: 32px;
-    padding: 13px;
-    box-sizing: border-box; }
+    overflow: hidden; }
+  .rightNav .button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 24px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    transition: all 0.25s ease-in-out 0s;
+    -ms-transition: all 0.25s ease-in-out 0s;
+    -moz-transition: all 0.25s ease-in-out 0s;
+    -o-transition: all 0.25s ease-in-out 0s;
+    -webkit-transition: all 0.25s ease-in-out 0s;
+    border: 1px solid #fff; }
+  .rightNav .buttons:hover .button1 {
+    left: -100%; }
+  .rightNav .buttons:hover .button2 {
+    left: 0; }
   .rightNav .button2 {
-    background: #2D2D2D; }
-  .rightNav .button1 {
-    margin-bottom: -70px;
     background: #fff;
-    color: #2D2D2D; }
+    color: #2D2D2D;
+    left: 100%; }
+  .rightNav .button1 {
+    background: #2D2D2D;
+    left: 0; }
   .rightNav li {
     display: block;
     width: 12px;
@@ -132,7 +164,20 @@ body.lightStyle {
     border: 1px solid #fff;
     width: 10px;
     height: 10px;
-    position: absolute; }
+    position: absolute;
+    transition: all 0.25s ease-in-out 0s;
+    -ms-transition: all 0.25s ease-in-out 0s;
+    -moz-transition: all 0.25s ease-in-out 0s;
+    -o-transition: all 0.25s ease-in-out 0s;
+    -webkit-transition: all 0.25s ease-in-out 0s; }
+    .rightNav span.r:hover {
+      transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg); }
+  .rightNav span.r.active {
+    background: #fff; }
 
 .bg-art {
   position: absolute;
@@ -152,8 +197,8 @@ body.lightStyle {
   margin-right: -4px;
   vertical-align: middle; }
   .left-container h1 {
-    font-size: 72px;
-    letter-spacing: 15px;
+    font-size: 64px;
+    letter-spacing: 10px;
     line-height: 1.5; }
 
 .right-container {

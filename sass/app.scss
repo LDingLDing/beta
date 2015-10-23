@@ -1,5 +1,6 @@
 @import "clearfix";
 @import "params";
+@import "mixins";
 
 body.darklyStyle{
 	background:$BlockGun;
@@ -13,10 +14,26 @@ body.lightStyle{
 	color:$BlockGun;
 	background: url(../imgs/bg.png) repeat;
 }
-
+.a-dec{
+	position:relative;
+	display: inline-block;
+	padding:3px 5px;
+	margin-left:-4px;
+}
+.a-dec:hover{
+	 border-bottom:1px solid; 
+}
+.a-dec:first-child{
+	margin-left:0;
+}
 .externalLinks,
 .internalLinks,
 .backlLink{
+	a:hover{
+		text-decoration:none;
+		cursor:default;
+	}
+	z-index:222;
 	position:absolute;
 	left:90px;
 	word-spacing: 20px;
@@ -46,34 +63,45 @@ body.lightStyle{
 	bottom:70px;
 }
 .rightNav {
+	z-index: 222;
 	position: absolute;
 	width:12px;
 	right:90px;
 	bottom:120px;
 	.buttons{
+		position:relative;
 		margin:20px 0;
-		cursor:default;
-		&:hover .button2{
-			background:Red;
-			transform:perspective(800px) rotateY(0);
-		}
-	}
-	.button{
 		width:50px;
 		height:70px;
-		border:1px solid #fff;
+		cursor:default;
 		margin-left:-60px;
-		font-size:32px;
-		padding:13px;
+		overflow: hidden;
+	}
+	.button{
+		position:absolute;
+		width:100%;
+		height:100%;
+		text-align: center;
+		font-size:24px;
+		padding-top:20px;
 		box-sizing: border-box;
+		@include transition;
+		border:1px solid #fff;
+	}
+	.buttons:hover .button1{
+		left:-100%;
+	}
+	.buttons:hover .button2{
+		left:0;
 	}
 	.button2{
-		background:$BlockGun ;
-	}
-	.button1{
-		margin-bottom:-70px;
 		background: #fff;
 		color:$BlockGun;
+		left:100%;
+	}
+	.button1{
+		background: $BlockGun;
+		left:0;
 	}
 	li{
 		display:block;
@@ -90,6 +118,13 @@ body.lightStyle{
 		width:10px;
 		height:10px;
 		position:absolute;
+		@include transition;
+		&:hover{
+			@include transform(360deg);
+		}
+	}
+	span.r.active{
+		background: #fff;
 	}
 }
 
@@ -112,8 +147,8 @@ body.lightStyle{
 	margin-right:-4px;
 	vertical-align: middle;
 	h1 {
-		font-size:72px;
-		letter-spacing: 15px;
+		font-size:64px;
+		letter-spacing: 10px;
 		line-height:1.5;
 	}
 }
