@@ -283,10 +283,13 @@ body.lightStyle {
   right: 90px;
   top: 150px; }
   .rightNav-mem .switchbox {
+    cursor: default;
     font-size: 16px;
     height: 95px; }
     .rightNav-mem .switchbox .items {
-      display: inline-block; }
+      display: inline-block;
+      vertical-align: top;
+      /* display: none; */ }
     .rightNav-mem .switchbox .item {
       width: 30px;
       height: 100%;
@@ -294,7 +297,11 @@ body.lightStyle {
       display: inline-block;
       margin-left: -7px;
       padding: 13px 5px;
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      vertical-align: top; }
+    .rightNav-mem .switchbox .active {
+      background: #2D2D2D;
+      color: #fff; }
     .rightNav-mem .switchbox .now {
       height: 91px; }
   .rightNav-mem ul {
@@ -308,9 +315,23 @@ body.lightStyle {
     border: 1px solid #2D2D2D;
     width: 10px;
     height: 10px;
-    position: absolute; }
+    position: absolute;
+    transition: all 0.25s ease-in-out 0s;
+    -ms-transition: all 0.25s ease-in-out 0s;
+    -moz-transition: all 0.25s ease-in-out 0s;
+    -o-transition: all 0.25s ease-in-out 0s;
+    -webkit-transition: all 0.25s ease-in-out 0s; }
+    .rightNav-mem span.r:hover {
+      transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg); }
+  .rightNav-mem span.r.now {
+    background: #2D2D2D; }
 
 #memCard {
+  background: #2D2D2D;
   width: 512px;
   height: 360px;
   border: 1px solid #2D2D2D;

@@ -7,33 +7,33 @@
 </head>
 <body class="lightStyle" style="margin-top:50%;">
 <nav class="backlLink">
-	<a href="#">BACK</a>
+	<a href="about.html">BACK</a>
 </nav>
 <nav class="nowHere">
-	<a href="#">ABOUT</a>
+	<p>ABOUT</p>
 </nav>
 <nav class="rightNav-mem">
 	<div class="switchbox">
 		<div class="items">
-			<div class="item">第五届</div>
-			<div class="item">第四届</div>
-			<div class="item">第三届</div>
-			<div class="item">第二届</div>
-			<div class="item">第一届</div>
+			<div class="item" data-classtype="5">第五届</div>
+			<div class="item" data-classtype="4">第四届</div>
+			<div class="item" data-classtype="3">第三届</div>
+			<div class="item" data-classtype="2">第二届</div>
+			<div class="item" data-classtype="1">第一届</div>
 		</div>
-		<div class="item now">第五届</div>
+		<div class="item now"></div>
 	</div>
-	<ul>
+	<ul id="tabMem">
+<!-- 		<li><span class="r"></span></li>
 		<li><span class="r"></span></li>
 		<li><span class="r"></span></li>
 		<li><span class="r"></span></li>
-		<li><span class="r"></span></li>
-		<li><span class="r"></span></li>
+		<li><span class="r"></span></li> -->
 	</ul>
 </nav>
 
 <div id="memCard">
-	<div class="phto"><img src="../dist/imgs/member/elliot-1.jpg"></div>
+<!-- 	<div class="phto"><img src="../dist/imgs/member/elliot-1.jpg"></div>
 	<p class="name">杨永鑫</p>
 	<div class="content">
 		<p class="part1"><span>专业</span>软件工程</p>
@@ -42,8 +42,10 @@
 	<div class="links">
 		<a href="#"><span class="github"></span></a>
 		<a href="#"><span class="blog"></span></a>
-	</div>
+	</div> -->
 </div>
+<script src="../dist/js/jquery-1.8.3.min.js"></script>
+<script src="../dist/js/memCards.js"></script>
 
 </body>
 </html>
