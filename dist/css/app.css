@@ -53,16 +53,52 @@ html {
 
 /** color **/
 /** length **/
+/** $ContainerWid : 1200px;
+$LeftContainerWid:510px;
+$RightContainerWid : $ContainerWid  - $LeftContainerWid - 4px ; **/
+a, a:hover {
+  text-decoration: none;
+  cursor: default;
+  position: relative; }
+
+a::after {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -13px;
+  content: "";
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s;
+  transform: translate3d(0px, 0px, 0px);
+  height: 2px; }
+
+a:hover::after {
+  left: -4px;
+  right: 0; }
+
+.not-a:hover::after {
+  background: transparent;
+  left: 50%;
+  right: 50%; }
+
+body {
+  font-family: "museo",sans-serif;
+  font-style: normal;
+  font-weight: 300; }
+
 body.darklyStyle {
   background: #2D2D2D;
   color: #fff; }
   body.darklyStyle a {
     color: #fff; }
+  body.darklyStyle a::after {
+    background: #fff; }
 
 body.lightStyle {
   background: #fff;
   color: #2D2D2D;
   background: url(../imgs/bg.png) repeat; }
+  body.lightStyle a::after {
+    background: #2D2D2D; }
 
 .a-dec {
   position: relative;
@@ -79,16 +115,12 @@ body.lightStyle {
 .externalLinks,
 .internalLinks,
 .backlLink {
+  font-family: inherit;
   z-index: 222;
   position: absolute;
   left: 90px;
   word-spacing: 20px;
   letter-spacing: 5px; }
-  .externalLinks a:hover,
-  .internalLinks a:hover,
-  .backlLink a:hover {
-    text-decoration: none;
-    cursor: default; }
 
 .nowHere {
   position: absolute;
@@ -187,15 +219,14 @@ body.lightStyle {
     height: 100%; }
 
 .container {
-  position: relative;
-  width: 1200px;
-  margin: 0 auto; }
+  position: relative; }
 
 .left-container {
   display: inline-block;
-  width: 510px;
   margin-right: -4px;
-  vertical-align: middle; }
+  vertical-align: middle;
+  word-wrap: break-word;
+  box-sizing: border-box; }
   .left-container h1 {
     font-size: 64px;
     letter-spacing: 10px;
@@ -203,25 +234,59 @@ body.lightStyle {
 
 .right-container {
   position: relative;
-  width: 686px;
   display: inline-block;
   vertical-align: middle; }
-  .right-container .blocks,
-  .right-container .buttons {
+  .right-container .blocks {
     margin: 0 auto;
     width: 324px; }
-  .right-container .buttons {
-    margin-top: 20px; }
   .right-container .block {
-    width: 100%;
+    width: 324px;
     height: 200px;
     border: 1px solid #fff;
-    margin: 10px 0; }
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden; }
+  .right-container .block-side1,
+  .right-container .block-side2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 0.25s ease-in-out 0s;
+    -ms-transition: all 0.25s ease-in-out 0s;
+    -moz-transition: all 0.25s ease-in-out 0s;
+    -o-transition: all 0.25s ease-in-out 0s;
+    -webkit-transition: all 0.25s ease-in-out 0s; }
+  .right-container .block-side1 {
+    background: rgba(0, 0, 0, 0.3);
+    top: 100%; }
+  .right-container .block-side2 {
+    top: 0;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 80px 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 22px; }
+  .right-container .block:hover .block-side1 {
+    top: 0; }
+  .right-container .block:hover .block-side2 {
+    top: -100%; }
+  .right-container .buttons {
+    margin: 0 auto;
+    width: 339px;
+    margin-top: 20px; }
   .right-container .button {
     width: 160.5px;
     height: 42px;
     border: 1px solid #fff;
-    display: inline-block; }
+    display: inline-block;
+    transition: all 0.25s ease-in-out 0s;
+    -ms-transition: all 0.25s ease-in-out 0s;
+    -moz-transition: all 0.25s ease-in-out 0s;
+    -o-transition: all 0.25s ease-in-out 0s;
+    -webkit-transition: all 0.25s ease-in-out 0s; }
+  .right-container .btn-prev {
+    margin-left: 15px; }
   .right-container .button:first-child {
     margin-right: -3px; }
   .right-container .button:last-child {
@@ -234,19 +299,30 @@ body.lightStyle {
     margin-top: 21px;
     height: 1px;
     background: #fff; }
+  .right-container .button:hover {
+    background: rgba(255, 255, 255, 0.3); }
 
 #part-video {
   position: relative;
-  margin: 0 auto;
-  width: 80%; }
+  margin: 0 auto; }
   #part-video .video {
-    position: relative;
-    width: 40%;
+    width: 320px;
     display: inline-block;
-    height: 330px;
-    background: #000; }
+    height: 180px;
+    background: #000;
+    margin-bottom: 20px; }
   #part-video .video:last-child {
     float: right; }
+    #part-video .video:last-child:after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 1px;
+      background: #fff;
+      bottom: 10px;
+      left: 200px; }
+  #part-video video {
+    outline: none; }
 
 #aboutUs {
   text-align: center; }
@@ -267,16 +343,74 @@ body.lightStyle {
 #picWall {
   position: relative;
   width: 80%;
-  margin: 80px auto; }
+  margin: 80px auto;
+  /* ui test
+.mask{
+	background:rgba(2,2,2,0.7);
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:0;
+	top:0;
+} */ }
   #picWall .item {
     width: 200px;
     height: 200px;
     background: #D8D8D8;
     display: inline-block;
     overflow: hidden;
-    margin: 20px; }
+    margin: 20px;
+    position: relative; }
     #picWall .item img {
       width: 100%; }
+  #picWall .mask {
+    transition: all 0.25s ease-in-out 0s;
+    -ms-transition: all 0.25s ease-in-out 0s;
+    -moz-transition: all 0.25s ease-in-out 0s;
+    -o-transition: all 0.25s ease-in-out 0s;
+    -webkit-transition: all 0.25s ease-in-out 0s;
+    background: rgba(2, 2, 2, 0.7);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    left: 50%;
+    top: 50%; }
+  #picWall .item:hover .mask {
+    transform: scale(200); }
+  #picWall .item:hover .mem-intro {
+    left: 0; }
+  #picWall .mem-intro {
+    position: absolute;
+    left: -100%;
+    bottom: 0;
+    width: 100%;
+    transition: left 0.1s ease-in-out 0.25s;
+    -ms-transition: left 0.1s ease-in-out 0.25s;
+    -moz-transition: left 0.1s ease-in-out 0.25s;
+    -o-transition: left 0.1s ease-in-out 0.25s;
+    -webkit-transition: left 0.1s ease-in-out 0.25s; }
+  #picWall p {
+    cursor: default; }
+  #picWall p.name {
+    color: #fff;
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 3;
+    font-size: 18px;
+    padding-left: 5px;
+    letter-spacing: 2px; }
+  #picWall .more {
+    padding: 15px 5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8); }
+    #picWall .more:hover {
+      color: #fff; }
 
 .rightNav-mem {
   position: absolute;
@@ -390,6 +524,11 @@ body.lightStyle {
       #memCard .links a span {
         display: block;
         height: 100%; }
+
+#haha {
+  font-family: "museo",serif;
+  font-style: normal;
+  font-weight: 500; }
 
 #screenVedio {
   min-width: 100%;

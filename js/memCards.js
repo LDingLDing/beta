@@ -81,6 +81,8 @@
 			var self = this;
 			var members = this.getClassNow(classtype);
 			self.tabMem.html("");
+			var MemNavHeight = $(window).height() - 300;
+			var rMargin = (MemNavHeight-14*members.length)/members.length;
 			$.each(members,function(i,val){
 				if(val.id == self.mem_id){
 					self.tabMem.append('<li data-id='+ val.id +'><span class="r now"></span></li>')
@@ -88,11 +90,15 @@
 					self.tabMem.append('<li data-id='+ val.id +'><span class="r"></span></li>');
 				}
 			});
-			this.tabMem.find('li').click(function(){
-				self.tabMem.find('li').find('span').removeClass('now');
-				$(this).find('span').addClass('now');
-				self.updateMem_id($(this).attr('data-id'));
-				self.renderMemCard();
+
+
+			this.tabMem.find('li')
+				.css('marginTop',rMargin)
+				.click(function(){
+					self.tabMem.find('li').find('span').removeClass('now');
+					$(this).find('span').addClass('now');
+					self.updateMem_id($(this).attr('data-id'));
+					self.renderMemCard();
 			});
 		},
 		updateMem_id:function(id){

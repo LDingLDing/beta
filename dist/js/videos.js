@@ -1,0 +1,1 @@
+!function(i){var o=function(){this.videosBox=i("#part-video"),this.videosBox.css({width:i(window).width()-500})};o.prototype={};new o}(jQuery);

@@ -5,9 +5,12 @@
 	<title>β-house</title>
 	<link rel="stylesheet" href="../dist/css/jquery.fullPage.css">
 	<link rel="stylesheet" href="../dist/css/app.css">
+	<link rel="stylesheet" href="../dist/css/animate.css">
 
 	<script src="../dist/js/jquery-1.8.3.min.js"></script>
 	<script src="../dist/js/jquery.fullPage.js"></script>
+	<script src="https://use.typekit.net/jkn3vfx.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 </head>
 <body class="darklyStyle">
@@ -16,27 +19,38 @@
 		<video id="screenVedio" muted="" loop="" autoplay="">
 	  		<source src="../links/video.mp4"></source>
 		</video>
-
+		<nav class="externalLinks">
+				<a href="http://xingzhi.betahouse.us/" target="_BLANK"> 行之</a>
+				<a href="http://join.betahouse.us/" target="_BLANK"> 招新</a>
+		</nav>
+		<nav class="internalLinks">
+				<a href="about.html">ABOUT</a>
+				<a href="email.html">EMAIL</a>
+		</nav>		
+		<div class="rightNav">
+			<ul>
+				<li data-menuanchor="page1"><a href="#page1" class="not-a"><span class="r active"></span></a></li>
+				<li data-menuanchor="page2"><a href="#page2" class="not-a"><span class="r "></span></a></li>
+				<li data-menuanchor="page3"><a href="#page3" class="not-a"><span class="r"></span></a></li>
+			</ul>
+		</div>
+		<div style="position:absolute;left:50%;margin-left:-60.5px;top:200px;">
+			<img src="../dist/imgs/logo.png" height="121" width="64.5">
+			<p style="margin-left:-130px; font-size:30px;margin-top:70px;letter-spacing:20px;">BETAHOUSE</p>
+		</div>
+	 
 	</div>	
-	<div class="section">
+	<div class="section" id="showWorks">
 		<div class="bg-art">
 			<img src="../dist/imgs/artfor1.png">
 		</div>
 		<nav class="externalLinks">
-			<div class="a-dec">
 				<a href="http://xingzhi.betahouse.us/" target="_BLANK"> 行之</a>
-			</div>
-			<div class="a-dec">
 				<a href="http://join.betahouse.us/" target="_BLANK"> 招新</a>
-			</div>
 		</nav>
 		<nav class="internalLinks">
-			<div class="a-dec">
 				<a href="about.html">ABOUT</a>
-			</div>
-			<div class="a-dec">
-				<a href="#">EMAIL</a>
-			</div>
+				<a href="email.html">EMAIL</a>
 		</nav>		
 		<div class="rightNav">
 			<div class="buttons">
@@ -48,25 +62,27 @@
 				<div class="button button2" onClick="$.fn.fullpage.moveSectionDown()">N</div>
 			</div>
 			<ul>
-				<li data-menuanchor="page1"><a href="#page1"><span class="r"></span></a></li>
-				<li data-menuanchor="page2"><a href="#page2"><span class="r active"></span></a></li>
-				<li data-menuanchor="page3"><a href="#page3"><span class="r"></span></a></li>
-				<li data-menuanchor="page4"><a href="#page4"><span class="r"></span></a></li>
+				<li data-menuanchor="page1"><a href="#page1" class="not-a"><span class="r"></span></a></li>
+				<li data-menuanchor="page2"><a href="#page2" class="not-a"><span class="r active"></span></a></li>
+				<li data-menuanchor="page3"><a href="#page3" class="not-a"><span class="r"></span></a></li>
 			</ul>
 		</div>
 		<div class="container">
 			<div class="left-container">
-				<h1> WE CREATE <br/> THINGS</h1>
+				<h1 id="haha"> WE CREATE THINGS</h1>
 			</div>
 			<div class="right-container">
 				<div class="blocks blocks-1">
-					<div class="block"></div>
-					<div class="block"></div>
-					<div class="block"></div>
+<!-- 					<div class="block">
+						<div class="block-side1"><img src="../dist/imgs/member/elyse.png" style="height:100%;"></div>
+						<div class="block-side2">杭电信工官网</div>
+					</div> -->
+					<!-- <div class="block"></div> -->
+					<!-- <div class="block"></div> -->
 				</div>
 				<div class="buttons">
-					<div class="button"></div>
-					<div class="button"></div>
+					<div class="button btn-prev"></div>
+					<div class="button btn-next"></div>
 				</div>
 			</div>
 		</div>
@@ -75,20 +91,60 @@
 		<div class="bg-art">
 			<img src="../dist/imgs/artfor2.png">
 		</div>
+		<nav class="externalLinks">
+				<a href="http://xingzhi.betahouse.us/" target="_BLANK"> 行之</a>
+				<a href="http://join.betahouse.us/" target="_BLANK"> 招新</a>
+		</nav>
+		<nav class="internalLinks">
+				<a href="about.html">ABOUT</a>
+				<a href="email.html">EMAIL</a>
+		</nav>		
+		<div class="rightNav">
+			<div class="buttons">
+				<div class="button button1" onClick="$.fn.fullpage.moveSectionUp()">P</div>
+				<div class="button button2" onClick="$.fn.fullpage.moveSectionUp()">P</div>
+			</div>
+			<ul>
+				<li data-menuanchor="page1"><a href="#page1" class="not-a"><span class="r"></span></a></li>
+				<li data-menuanchor="page2"><a href="#page2" class="not-a"><span class="r "></span></a></li>
+				<li data-menuanchor="page3"><a href="#page3" class="not-a"><span class="r active"></span></a></li>
+			</ul>
+		</div>
 		<div  id="part-video">
-			<div class="video"></div>
-			<div class="video"></div>
+			<div class="video">
+				<video width="320" height="180" controls="controls">
+					  <source src="../links/beta1.ogv" type="video/ogg" />
+					  <source src="../links/beta1.mp4" type="video/mp4" />
+					  <source src="../links/beta1.webm" type="video/webm" />
+				</video>
+			</div>
+			<div class="video">
+				<video width="320" height="180" controls="controls">
+					<source src="../links/beta1.ogv" type="video/ogg" />
+					<source src="../links/beta1.mp4" type="video/mp4" />
+					<source src="../links/beta1.webm" type="video/webm" />
+				</video>
+			</div>
 		</div>
 	</div>
 </div>
 
 
 </body>
+<script src="../dist/js/jquery.shuffleLetters.js"></script>
+<script type="text/javascript" src="../dist/js/showWorks.js"></script>
+<script src="../dist/js/videos.js"></script>
+<script src="../dist/js/btnsound.js"></script>
 <script>
 	$(function(){
 		$('#dowebok').fullpage({
 			resize:false,
-			anchors:['page1','page2','page3','page4']
+			anchors:['page1','page2','page3','page4'],
+			afterLoad:function(anchorLink,index){
+				if(anchorLink == "page2"){
+					$('#haha').shuffleLetters();
+				}
+			}
 		});
 	});
 

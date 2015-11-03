@@ -10,8 +10,21 @@
 			var self = this;
 			$.getJSON('../dist/data/member.json',function(data){
 				$.each(data,function(i,val){
-					self.picWall.append('<div class="item"  title="'+ val.id +'"><img src="'+ self.baseImgSrc + val.imgsrc +'" onClick="location.href=\'about-mem.html?id='+ val.id +'\'"></div>')
+					var dom = ' <div class="item">'+
+									'<img src="'+ self.baseImgSrc + val.imgsrc +'">'+
+									'<div class="mask"></div>'+
+									'<div class="mem-intro">'+
+										'<p class="name">'+ val.name +'</p>'+
+										'<p class="more" onClick="location.href=\'about-mem.html?id='+ val.id +'\'">More Things</p>'+
+									'</div>'+
+								'</div>';
+					self.picWall.append(dom);
 				});
+				// self.picWall.find('.item').hover(function(){
+				// 	$(this).find('.mem-intro').fadeIn();
+				// },function(){
+				// 	$(this).find('.mem-intro').fadeOut();
+				// });
 			});
 		}
 	};

@@ -2,17 +2,54 @@
 @import "params";
 @import "mixins";
 
+
+a,a:hover{
+	text-decoration:none;
+	cursor:default;
+	position:relative;
+}
+a::after{
+	position:absolute;
+	left:50%;
+	right:50%;
+	bottom:-13px;
+	content:"";
+	transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s;
+	transform:translate3d(0px, 0px, 0px);
+	height:2px;
+
+}
+a:hover::after{
+	left:-4px;
+	right:0;
+}
+.not-a:hover::after{
+	background: transparent;
+	left:50%;
+	right:50%;
+}
+body{
+	font-family: "museo",sans-serif;
+	font-style: normal;
+	font-weight: 300;
+}
 body.darklyStyle{
 	background:$BlockGun;
 	color:#fff;
 	a{
 		color:#fff;
 	}
+	a::after{
+		background:#fff ;
+	}
 }
 body.lightStyle{
 	background: #fff;
 	color:$BlockGun;
 	background: url(../imgs/bg.png) repeat;
+	a::after{
+		background:$BlockGun ;
+	}
 }
 .a-dec{
 	position:relative;
@@ -29,10 +66,7 @@ body.lightStyle{
 .externalLinks,
 .internalLinks,
 .backlLink{
-	a:hover{
-		text-decoration:none;
-		cursor:default;
-	}
+	font-family: inherit;
 	z-index:222;
 	position:absolute;
 	left:90px;
@@ -138,14 +172,13 @@ body.lightStyle{
 }
 .container{
 	position:relative;
-	width:$ContainerWid;
-	margin:0 auto;
 }
 .left-container {
 	display: inline-block;
-	width: $LeftContainerWid;
 	margin-right:-4px;
 	vertical-align: middle;
+	word-wrap:break-word;
+	box-sizing: border-box;
 	h1 {
 		font-size:64px;
 		letter-spacing: 10px;
@@ -154,30 +187,58 @@ body.lightStyle{
 }
 .right-container {
 	position:relative;
-	width:$RightContainerWid;
 	display: inline-block;
 	vertical-align: middle;
 	$LeftContainerWidth : 324px;
-	.blocks,
-	.buttons{
+	.blocks{
 		margin: 0 auto;
 		width:$LeftContainerWidth;
 	}
-	.buttons{
-		margin-top:20px;
-	}
 	.block{
-		width:100%;
+		width:$LeftContainerWidth;
 		height:200px;
 		border:1px solid #fff;
-		margin:10px 0;
+		margin:10px;
+		display: inline-block;
+		position:relative;
+		overflow: hidden;;
 	}
+	.block-side1,
+	.block-side2{
+		position: absolute;
+		width:100%;
+		height:100%;
+		@include transition;
+	}
+	.block-side1{
+		background:rgba(0,0,0,0.3);
+		top:100%;
+	}
+	.block-side2{
+		top:0;
+		background:rgba(255,255,255,0.3);
+		padding:80px 0;
+		box-sizing: border-box;
+		text-align: center;
+		font-size: 22px;
+	}
+	.block:hover .block-side1{top:0;}
+	.block:hover .block-side2{top:-100%;}
 	$LeftConBtnHeight:42px;
+	.buttons{
+		margin: 0 auto;
+		width:$LeftContainerWidth+15;
+		margin-top:20px;
+	}
 	.button{
 		width:($LeftContainerWidth - 3)/2;
 		height:$LeftConBtnHeight;
 		border:1px solid #fff;
 		display: inline-block;
+		@include transition;
+	}
+	.btn-prev{
+		margin-left:15px;
 	}
 	.button:first-child{
 		margin-right: -3px;
@@ -194,21 +255,35 @@ body.lightStyle{
 		height:1px;
 		background: #fff;
 	}
+	.button:hover{
+		background:rgba(255,255,255,0.3);
+	}
 }
 
 #part-video {
 	position:relative;
 	margin: 0 auto;
-	width:80%;
 	.video {
-		position:relative;
-		width:40%;
+		width:320px;
 		display: inline-block;
-		height:330px;
+		height:180px;
 		background: #000;
+		margin-bottom:20px;
 	}
 	.video:last-child{
 		float:right;
+		&:after{
+			content:"";
+			position: absolute;
+			width:180px;
+			height:1px;
+			background:#fff;
+			bottom:10px;
+			left:200px;
+		}
+	}
+	video{
+		outline:none;
 	}
 }
 
@@ -241,7 +316,63 @@ body.lightStyle{
 		display: inline-block;
 		overflow: hidden;
 		margin:20px;
+		position:relative;
 		img{width:100%;}
+	}
+/* ui test
+.mask{
+	background:rgba(2,2,2,0.7);
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:0;
+	top:0;
+} */
+	.mask{
+		@include transition;
+		background:rgba(2,2,2,0.7);
+		position:absolute;
+		width:1px;
+		height:1px;
+		left:50%;
+		top:50%;
+	}
+	.item:hover .mask{
+    	transform:scale(200);  
+	}
+	.item:hover .mem-intro{
+		left:0;
+	}
+	.mem-intro{
+		position:absolute;
+		left:-100%;
+		bottom:0;
+		width:100%;
+		@include transition(left,0.1s,ease-in-out,0.25s);
+	}
+	p{
+		cursor:default;
+	}
+	p.name {
+		color:#fff;
+		width:80%;
+		margin:0 auto;
+		text-align: left;
+		line-height: 3;
+		font-size: 18px;
+		padding-left: 5px;
+		letter-spacing: 2px;
+	}
+	.more {
+		padding:15px 5px;
+		border-top:1px solid rgba(255,255,255,0.2);
+		box-sizing: border-box;
+		width:80%;
+		margin:0 auto;
+		text-align: left;
+		font-style: italic;
+		color:rgba(255,255,255,0.8);
+		&:hover{color:#fff;}
 	}
 
 }
@@ -371,14 +502,17 @@ body.lightStyle{
 	}
 }
 
+#haha{
+	font-family: "museo",serif;
+	font-style: normal;
+	font-weight: 500;
+}
 #screenVedio{
 	min-width:100%;
 	min-height:100%;
 	width:auto;
 	height:auto;
 }
-
-
 
 
 span.github{
