@@ -405,7 +405,7 @@ body.lightStyle{
 			color:#fff;
 		}
 		.now{
-			height: 91px;
+			height: 82px;
 		}
 	}
 	ul{
@@ -431,15 +431,20 @@ body.lightStyle{
 		background: $BlockGun;
 	}
 }
-
 #memCard{
 	background:$BlockGun ;
 	width:512px;
 	height:360px;
 	border:1px solid $BlockGun;
-	margin: 0 auto;
+/*	margin: 0 auto;
 	margin-top:-512px;
-	position: relative;
+	position: relative; */
+	position:absolute;
+	bottom:0;
+	top:0;
+	left:0;
+	right:0;
+	margin:auto;
 	.phto{
 		position:absolute;
 		width:120px;

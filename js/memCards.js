@@ -93,7 +93,10 @@
 
 
 			this.tabMem.find('li')
-				.css('marginTop',rMargin)
+				.css({
+					'marginTop':rMargin,
+					'marginBottom':0
+				})
 				.click(function(){
 					self.tabMem.find('li').find('span').removeClass('now');
 					$(this).find('span').addClass('now');
@@ -121,8 +124,8 @@
 				'<p class="part2"><span>介绍</span>'+ this.nowMem.intro +'</p>'+
 			'</div>'+
 			'<div class="links">'+
-				'<a href="'+ this.nowMem.github +'"><span class="github"></span></a>'+
-				'<a href="'+ this.nowMem.blog +'"><span class="blog"></span></a>'+
+				'<a href="'+ this.nowMem.github +'" class="not-a"><span class="github"></span></a>'+
+				'<a href="'+ this.nowMem.blog +'" class="not-a"><span class="blog"></span></a>'+
 			'</div> ';
 			this.cardbox.html(dom);
 

@@ -1,1 +1,0 @@
-var test=1,Person={name:"Json"};
