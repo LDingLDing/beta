@@ -1,8 +1,7 @@
 [
-	{"id":"1","name":"work1","imgsrc":"../dist/imgs/works/word-example.png"},
-	{"id":"2","name":"work2","imgsrc":"../dist/imgs/works/word-example.png"},
-	{"id":"3","name":"work3","imgsrc":"../dist/imgs/works/word-example.png"},
-	{"id":"4","name":"work4","imgsrc":"../dist/imgs/works/word-example.png"},
-	{"id":"5","name":"work5","imgsrc":"../dist/imgs/works/word-example.png"},
-	{"id":"6","name":"work6","imgsrc":"../dist/imgs/works/word-example.png"}
+	{"id":"1","name":"信工官网","imgsrc":"../dist/imgs/works/xggw.png"},
+	{"id":"2","name":"信工教务网","imgsrc":"../dist/imgs/works/xgjw.png"},
+	{"id":"3","name":"信工学工网","imgsrc":"../dist/imgs/works/xgxg.png"},
+	{"id":"4","name":"信工招生网","imgsrc":"../dist/imgs/works/xgzs.png"},
+	{"id":"5","name":"廉政之窗","imgsrc":"../dist/imgs/works/lzzc.png"}
 ]

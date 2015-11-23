@@ -5,7 +5,8 @@
 		this.container = this.showWorksbox.find('.container');
 		this.leftContainer = this.container.find('.left-container');
 		this.rightContainer = this.container.find('.right-container');
-		this.leftboxWid = parseInt(this.showWorksbox.find('.bg-art').css('width'));
+		// this.leftboxWid = parseInt(this.showWorksbox.find('.bg-art').css('width'));
+		this.leftboxWid = 680;
 		this.rightboxWid = $(window).width()-this.leftboxWid-4-160;
 		this.pageID = 1;
 		if($(window).width() < 1200){
