@@ -415,7 +415,8 @@ body.lightStyle {
 .rightNav-mem {
   position: absolute;
   right: 90px;
-  top: 150px; }
+  top: 150px;
+  color: #2D2D2D; }
   .rightNav-mem .switchbox {
     cursor: default;
     font-size: 16px;
@@ -423,8 +424,10 @@ body.lightStyle {
     .rightNav-mem .switchbox .items {
       display: inline-block;
       vertical-align: top;
+      color: #2D2D2D;
       /* display: none; */ }
     .rightNav-mem .switchbox .item {
+      color: #2D2D2D;
       width: 30px;
       height: 100%;
       border: 1px solid #2D2D2D;
@@ -437,7 +440,7 @@ body.lightStyle {
       background: #2D2D2D;
       color: #fff; }
     .rightNav-mem .switchbox .now {
-      height: 82px; }
+      height: 97px; }
   .rightNav-mem ul {
     float: right; }
   .rightNav-mem li {
@@ -507,15 +510,17 @@ body.lightStyle {
     padding-top: 10px; }
   #memCard .part1,
   #memCard .part2 {
-    margin: 15px 0;
+    margin: 10px 0;
     line-height: 2;
-    letter-spacing: 1; }
+    letter-spacing: 1;
+    padding-left: 48px; }
     #memCard .part1 span,
     #memCard .part2 span {
       font-size: 1.3em;
       font-style: italic;
       padding-right: 10px;
-      color: #666; }
+      color: #666;
+      margin-left: -48px; }
   #memCard .links {
     position: absolute;
     right: 30px;

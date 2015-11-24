@@ -122,13 +122,16 @@
 			'<div class="content">'+
 				'<p class="part1"><span>专业</span>'+ this.nowMem.professional +'</p>'+
 				'<p class="part2"><span>介绍</span>'+ this.nowMem.intro +'</p>'+
-			'</div>'+
-			'<div class="links">'+
-				'<a href="'+ this.nowMem.github +'" class="not-a"><span class="github"></span></a>'+
-				'<a href="'+ this.nowMem.blog +'" class="not-a"><span class="blog"></span></a>'+
-			'</div> ';
+			'</div>' + 
+			'<div class="links">';
+			if(this.nowMem.github!='#' && this.nowMem.github ){
+				dom += '<a href="'+ this.nowMem.github +'" target="BLANK" class="not-a"><span class="github"></span></a>';
+			}
+			if(this.nowMem.blog!='#' && this.nowMem.blog){
+				dom += '<a href="'+ this.nowMem.blog +'" target="BLANK" class="not-a"><span class="blog"></span></a>'
+			}
+			dom += '</div> ';
 			this.cardbox.html(dom);
-
 		},
 		getClassNow:function(classtype){
 			var set = [];

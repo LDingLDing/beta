@@ -20,9 +20,9 @@ gulp.task('sass:app',function(){
 });	
 
 gulp.task('imgMin',function(){
-	gulp.src('./imgs/works/*')
+	gulp.src('./imgs/member/*')
 	.pipe(imagemin())
-	.pipe(gulp.dest('./dist/imgs/works'));
+	.pipe(gulp.dest('./dist/imgs/member'));
 });	
 
 

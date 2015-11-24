@@ -381,6 +381,7 @@ body.lightStyle{
 	position: absolute;
 	right:90px;
 	top:150px;
+	color:$BlockGun;
 	.switchbox{
 		cursor:default;
 		font-size: 16px;
@@ -388,9 +389,11 @@ body.lightStyle{
 		.items{
 			display: inline-block; 
 			vertical-align: top;
+			color:$BlockGun;
 			/* display: none; */
 		}
 		.item{
+			color:$BlockGun;
 			width:30px;
 			height:100%;
 			border:1px solid $BlockGun;
@@ -405,7 +408,7 @@ body.lightStyle{
 			color:#fff;
 		}
 		.now{
-			height: 82px;
+			height: 97px;
 		}
 	}
 	ul{
@@ -478,14 +481,16 @@ body.lightStyle{
 	}
 	.part1,
 	.part2{
-		margin:15px 0;
+		margin:10px 0;
 		line-height: 2;
 		letter-spacing: 1;
+		padding-left:48px;
 		span{
 			font-size: 1.3em;
 			font-style:italic;
 			padding-right: 10px;
 			color:#666;
+			margin-left: -48px;
 		}
 	}
 	.links{
